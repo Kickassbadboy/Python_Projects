@@ -10,8 +10,9 @@ new_path = raw_input("Enter the destination path")
 current_path = os.listdir(path) # it creates variable to store the current path
 print(current_path)
 for files in current_path:
-    all_files = os.path.join(current_path,path)
-    print(all_files)
-    if os.path.isfile(all_files):
-        print(os.pathisfile(all_files))
-        shutil.copytree(all_files,new_path)
+   # all_files = os.path.join(current_path,path)
+    #print(all_files)
+   # if os.path.isfile(all_files):
+    #    print(os.pathisfile(all_files))
+     #   shutil.copytree(all_files,new_path)
+      shutil.copy(files,new_path)

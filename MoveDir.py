@@ -5,13 +5,15 @@
 
 import os
 import shutil
-path=raw_input("Enter the path you want to copy file from")
-new_path = raw_input("Enter the destination path")
-current_path = os.listdir(path) # it creates variable to store the current path
-print(current_path)
-for files in current_path:
-    all_files = os.path.join(current_path,path)
-    print(all_files)
-    if os.path.isfile(all_files):
-        print(os.pathisfile(all_files))
-        shutil.copytree(all_files,new_path)
+path=raw_input("Enter the path you want to copy file from: ")
+new_path = raw_input("Enter the destination path: ")
+files_in_path = os.listdir(path) # stores the name of all files inside path in a list
+print(files_in_path)
+#shutil.copytree(path,new_path) # Recursively copy an entire directory tree rooted at "path". The destination directory, named by "new_path", MUST NOT already exist
+
+for file_name in files_in_path:
+    file_path = os.path.join(path, file_name)
+    print(file_path)
+    if os.path.isfile(file_path):
+        print(os.path.isfile(file_path))
+        shutil.copy2(file_path, new_path) # destination directory MUST already exist
